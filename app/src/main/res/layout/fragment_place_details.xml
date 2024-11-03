@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<com.google.android.material.appbar.AppBarLayout
+android:id="@+id/appbar"
+android:layout_width="match_parent"
+android:layout_height="300dp"
+android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar">
+
+<com.google.android.material.appbar.CollapsingToolbarLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:contentScrim="?attr/colorPrimary"
+    app:layout_scrollFlags="scroll|exitUntilCollapsed"
+    app:expandedTitleMarginStart="16dp"
+    app:expandedTitleMarginEnd="64dp">
+
+    <ImageView
+        android:id="@+id/place_header_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        app:layout_collapseMode="parallax"
+        android:contentDescription="@string/place_header_image_desc"/>
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/detail_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_collapseMode="pin"/>
+
+</com.google.android.material.appbar.CollapsingToolbarLayout>
+
+</com.google.android.material.appbar.AppBarLayout>
+
+<androidx.core.widget.NestedScrollView
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/place_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/fonts"
+        android:textAppearance="?attr/textAppearanceHeadline5"/>
+
+    <RatingBar
+        android:id="@+id/rating_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        style="?android:attr/ratingBarStyleSmall"
+        android:isIndicator="true"/>
+
+    <TextView
+        android:id="@+id/place_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/fonts"
+        android:textAppearance="?attr/textAppearanceBody1"/>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="16dp"
+        app:cardCornerRadius="8dp">
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout="@layout/fragment_map_placeholder"/>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/place_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/fonts"
+        android:textAppearance="?attr/textAppearanceBody1"/>
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/amenities_chip_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"/>
+
+</LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
+
+<com.google.android.material.floatingactionbutton.FloatingActionButton
+android:id="@+id/fab_directions"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_margin="16dp"
+android:contentDescription="@string/get_directions"
+app:layout_anchor="@id/appbar"
+app:layout_anchorGravity="bottom|end"
+app:srcCompat="@drawable/ic_directions"/>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>

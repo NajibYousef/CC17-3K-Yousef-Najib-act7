@@ -1,0 +1,14 @@
+<resources>
+
+    <string name="app_name">Baguio City Guide</string>
+    <string name="coffee_shops">Coffee Shops</string>
+    <string name="restaurants">Restaurants</string>
+    <string name="kid_friendly">Kid-Friendly Places</string>
+    <string name="parks">Parks</string>
+    <string name="shopping_centers">Shopping Centers</string>
+    <string name="place_header_image">Place header image</string>
+    <string name="get_directions">Get directions</string>
+    <string name="place_header_image_desc">Place header image</string>
+
+
+</resources>
